@@ -9,7 +9,7 @@ int main()
     scanf("%d %d",&gram,&fast);
     if(gram > 1000)
     {
-        gram = gram % 1000 ;
+        gram = gram - 1000 ;
         if(gram % 500 != 0)
             gram = gram / 500 +1;
         else
@@ -22,6 +22,6 @@ int main()
     else if(fast == 2)
         price = price + 10;
 
-    printf("%d\n",price);
+    printf("%d",price);
     return 0;
 }
