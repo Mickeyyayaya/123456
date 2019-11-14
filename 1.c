@@ -9,7 +9,10 @@ int main()
     if(gram > 1000)
     {
         gram = gram % 1000 ;
-        gram = gram / 500 +1 ;
+        if(gram % 500 != 0)
+            gram = gram / 500 +1;
+        else
+            gram = gram / 500;
         price = price + gram * 4;
     }
 
