@@ -1,16 +1,23 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
-int main()
+int main ()
 {
-    int n;
-    scanf("%d",&n);
-    int cost,time;
-    int total = 0;
-    for(int i = 0; i<n; i++)
+    int N;
+    scanf("%d",&N);
+    for(int i = 1;i<=N;i+=2)
     {
-        scanf("%d %d",&cost,&time);
-        total = total + cost * time;
+        for(int j = 0;j<i;j++)
+            printf("*");
+        printf("\n");
     }
-    printf("%d",total);
+    for(int i = N-2;i>0;i-=2)
+    {
+        for(int j = 0;j<i;j++)
+            printf("*");
+        printf("\n");
+    }
     return 0;
 }
