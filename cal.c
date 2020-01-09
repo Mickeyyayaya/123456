@@ -14,58 +14,29 @@ int main()
 
     scanf("%d",&year);
 
+    int a = isLeapYear(year);
 //計算某一年某個月第一天星期幾
 
-    days=year-1+(year-1)/400+(year-1)/4-(year-1)/100;
 
     while(month<=12)
 
     {
 
         printf("%d月\n",month);
-
-
-        d=1,i=1;
-
-        weekDay=(days+1)%7;//求星期幾
-
-        while(i<=weekDay)
-
+        int b = monthDay(month,year);
+        for(int i  = 1 ;i<=b;i++)
         {
-
-            printf("\t");
-
-            i++;
-
-        }
-
-        while(d<=monthDay(month,year))
-
-        {
-
-            weekDay=(days+1)%7;
-
-            if(weekDay==6)
-
-                printf("%d\n",d);
-
-            else
-
-                printf("%d\t",d);
-
-            if(d==monthDay(month,year))
-
+            if(i % 7 == 0)
+            {
+                printf("%d",i);
                 printf("\n");
-
-            d++;
-
-            days++;
-
+            }
+            else
+                printf("%d\t",i);
         }
-
+        if(b != 28)
+            printf("\n");
         month++;
-
-        printf("\n");
 
     }
 
@@ -95,7 +66,7 @@ int monthDay(int month, int year)
 
         case 2:
 
-            if((IsLeapYear(year))==1)
+            if((isLeapYear(year))==1)
 
                 return 29;
 
@@ -108,7 +79,7 @@ int monthDay(int month, int year)
         }
 }
 
-int IsLeapYear(int year)
+int isLeapYear(int year)
 
 {
 
